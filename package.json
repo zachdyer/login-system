@@ -1,0 +1,27 @@
+{
+  "name": "login-system",
+  "version": "1.0.0",
+  "description": "simple login system built with node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachdyer/login-system.git"
+  },
+  "keywords": [
+    "simple",
+    "login",
+    "system"
+  ],
+  "author": "Zach Dyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachdyer/login-system/issues"
+  },
+  "homepage": "https://github.com/zachdyer/login-system#readme",
+  "dependencies": {
+    "firebase": "^4.10.0"
+  }
+}
