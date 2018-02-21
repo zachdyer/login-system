@@ -1,3 +1,4 @@
+/* global firebase */
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAmCXknqhWt8Itglas8NCfKuONEBp3KsK0",
@@ -13,6 +14,7 @@
   const inputPassword = document.getElementById("inputPassword");
   const buttonSignIn = document.getElementById("buttonSignIn");
   const buttonSignUp = document.getElementById("buttonSignUp");
+  const buttonSignOut = document.getElementById("buttonSignOut");
   
   var signin = function () {
       const email    = inputEmail.value;
@@ -36,3 +38,17 @@
       
       promise.catch(e => console.error(e.message));
   }
+  
+  var signout = function () {
+    firebase.auth().signOut();
+  }
+  
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+      console.log(firebaseUser);
+      buttonSignOut.classList.remove("d-none");
+    } else {
+      console.log('not logged in');
+      buttonSignOut.classList.add("d-none");
+    }
+  });
