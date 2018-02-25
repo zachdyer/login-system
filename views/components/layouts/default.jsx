@@ -9,7 +9,7 @@ export default class Default extends React.Component {
             <html>
                 <Head css={this.props.css}/>
                 <body>
-                    <div id="wrapper" class="toggled">
+                    <div id="wrapper" className="toggled">
                     <Header />
                         <div id="page-content-wrapper">
                             <div className="container-fluid">

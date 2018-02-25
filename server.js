@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var app = express();
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
 
 //Configuring Express
 app.use(express.static("public"));
@@ -72,15 +72,15 @@ app.post('/profile/edit', (req, res) => {
 });
 
 // GET Routes
-app.get("/", (req, res) => {
-    const currentUser = firebase.auth().currentUser;
-    if(currentUser) {
-      res.redirect('/profile');
-    } else {
-      console.log('user not logged in');
-       res.redirect("/login");
-    }
-});
+// app.get("/", (req, res) => {
+//     const currentUser = firebase.auth().currentUser;
+//     if(currentUser) {
+//       res.redirect('/profile');
+//     } else {
+//       console.log('user not logged in');
+//       res.redirect("/login");
+//     }
+// });
 app.get("/login", (req, res) => {
     const currentUser = firebase.auth().currentUser;
     if(currentUser) {

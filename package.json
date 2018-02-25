@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/zachdyer/login-system.git"
   },
+  "engines": {
+    "node": "8.9.1"
+  },
   "keywords": [
     "simple",
     "login",
@@ -23,6 +26,7 @@
   "homepage": "https://github.com/zachdyer/login-system#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "express-react-views": "^0.10.5",
     "firebase": "^4.10.0",
     "react": "^16.2.0",
