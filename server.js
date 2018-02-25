@@ -72,6 +72,15 @@ app.post('/profile/edit', (req, res) => {
 });
 
 // GET Routes
+app.get("/", (req, res) => {
+    const currentUser = firebase.auth().currentUser;
+    if(currentUser) {
+      res.redirect('/profile');
+    } else {
+      console.log('user not logged in');
+       res.redirect("/login");
+    }
+});
 app.get("/login", (req, res) => {
     const currentUser = firebase.auth().currentUser;
     if(currentUser) {
@@ -80,7 +89,7 @@ app.get("/login", (req, res) => {
         phone: currentUser.phoneNumber, photoURL: currentUser.photoURL});
     } else {
       console.log('user not logged in');
-       res.redirect("/");
+       res.redirect("/login");
     }
     
 });
